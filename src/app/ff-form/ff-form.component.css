@@ -1,0 +1,204 @@
+.form-control {
+  position: relative;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  border-bottom: 2px solid #BEBEBE;
+  background: transparent; }
+  .form-control:focus {
+    box-shadow: none;
+    border-color: lightgray; }
+
+#testTwo {
+  border-right: 1px solid lightgray;
+  border-left: 1px solid lightgray;
+  border-top: 1px solid lightgray; }
+
+label {
+  transform: translate(10px, 30px) scale(1.2);
+  text-indent: 10px;
+  transition: all 500ms ease;
+  color: lightgray; }
+  label.l-focus {
+    transform: none;
+    color: #39e2f5;
+    text-indent: 0; }
+  label.l-filled {
+    transform: none;
+    color: lightgray;
+    text-indent: 0; }
+  label.norm {
+    transform: none;
+    text-indent: 0;
+    color: #000; }
+
+.helper {
+  color: indianred;
+  visibility: hidden; }
+
+.input-focus {
+  position: absolute;
+  height: 2px;
+  width: 0px;
+  top: 57px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #39e2f5;
+  transition: all 500ms ease; }
+  .input-focus.focused {
+    width: 98%;
+    transition: all 500ms ease; }
+
+.styled-checkbox {
+  position: absolute;
+  opacity: 0; }
+  .styled-checkbox + label {
+    position: relative;
+    cursor: pointer;
+    padding: 0; }
+  .styled-checkbox + label:before {
+    content: '';
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border: 2px solid lightgray; }
+  .styled-checkbox:hover + label:before {
+    background: transparent; }
+  .styled-checkbox:focus + label:before {
+    background: transparent; }
+  .styled-checkbox:checked + label:before {
+    background: transparent; }
+  .styled-checkbox:checked + label:after {
+    font-family: 'Glyphicons Halflings';
+    color: #fff;
+    padding-right: 2px;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    background: rgba(0, 150, 255, 0.8);
+    width: 20px;
+    height: 20px; }
+
+.blip, .r-blip {
+  height: 10px;
+  width: 10px;
+  z-index: 100;
+  position: absolute;
+  border-radius: 50%;
+  top: 7px;
+  left: 5px;
+  background: rgba(0, 150, 255, 0.5);
+  transform: scale(0); }
+  .blip.blipped, .r-blip.blipped {
+    animation: blipp 500ms ease; }
+
+@keyframes blipp {
+  to {
+    transform: scale(5);
+    opacity: .3; } }
+.styled-radio {
+  position: absolute;
+  opacity: 0; }
+  .styled-radio + label {
+    position: relative;
+    cursor: pointer;
+    padding: 0; }
+  .styled-radio + label:before {
+    content: '';
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid lightgray; }
+  .styled-radio:hover + label:before {
+    background: transparent; }
+  .styled-radio:focus + label:before {
+    background: transparent; }
+  .styled-radio:checked + label:before {
+    background: transparent; }
+  .styled-radio:checked + label:after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 7px;
+    background: rgba(0, 150, 255, 0.8);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%; }
+
+@keyframes p-animate {
+  0% {
+    width: 70%;
+    left: -100%; }
+  100% {
+    width: 70%;
+    left: 100%; } }
+.p-bar {
+  position: relative;
+  overflow: hidden;
+  margin: 10px auto;
+  padding: 0;
+  height: 5px;
+  width: 100%;
+  background: rgba(0, 150, 255, 0.2); }
+
+.p-bar-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50px;
+  background: rgba(0, 150, 255, 0.8);
+  transition: all 100ms ease;
+  animation: p-animate 1500ms infinite ease-in-out; }
+
+.table.no-bs {
+  border-width: 2px;
+  border-radius: 3px; }
+  .table.no-bs tr:hover {
+    background: #f5f5f5;
+    border-left: 2px solid rgba(0, 150, 255, 0.8);
+    color: rgba(0, 150, 255, 0.8);
+    font-weight: bold; }
+
+.table {
+  border-width: 2px; }
+  .table tr:hover {
+    background: #f5f5f5;
+    border-left: 2px solid rgba(0, 150, 255, 0.8);
+    color: rgba(0, 150, 255, 0.8); }
+
+.nav-tabs {
+  border: none; }
+  .nav-tabs li .active a {
+    border: none; }
+
+.tab-follower {
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 150, 255, 0.8);
+  transition: all 300ms ease; }
+
+.form-group.norm label {
+  transform: none;
+  color: initial; }
+.form-group.invalid .helper {
+  visibility: visible; }
+.form-group.invalid .input-focus {
+  background: indianred;
+  width: 98%; }
+.form-group.invalid label {
+  transform: none;
+  color: indianred; }
+
+/*# sourceMappingURL=ff-form.component.css.map */

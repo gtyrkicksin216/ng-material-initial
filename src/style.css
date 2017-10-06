@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+@import url(../node_modules/bootstrap/dist/css/bootstrap.min.css);
+@import url(../node_modules/bootstrap/dist/css/bootstrap-theme.min.css);
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600,700,900");
+body, html {
+  margin: 0;
+  padding: 0;
+  background: black;
+  font-family: 'Source Sans Pro', sans-serif; }
+
+.container-fluid {
+  padding: 0; }
+
+*[primary] {
+  background: rgba(0, 150, 255, 0.8); }
+
+*:focus {
+  outline: none !important;
+  border-color: none;
+  box-shadow: none; }
+
+.form-control {
+  position: relative;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  border-bottom: 1px solid lightgray;
+  background: transparent; }
+  .form-control:focus {
+    box-shadow: none;
+    border-color: lightgray; }
+
+/*# sourceMappingURL=style.css.map */

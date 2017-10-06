@@ -1,0 +1,481 @@
+.form-control {
+    position: relative;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    border-bottom: 2px solid #BEBEBE;
+    background: transparent;
+    &:focus {
+        box-shadow: none;
+        border-color: lightgray;
+    }
+}
+
+#testTwo {
+  border-right: 1px solid lightgray;
+  border-left: 1px solid lightgray;
+  border-top: 1px solid lightgray;
+}
+
+label {
+    transform: translate(10px, 30px) scale(1.2);
+    text-indent: 10px;
+    transition: all 500ms ease;
+    color: lightgray;
+    &.l-focus {
+        transform: none;
+        color: rgba(57,226,245,1);
+        text-indent: 0;
+    }
+    &.l-filled {
+        transform: none;
+        color: lightgray;
+        text-indent: 0;
+    }
+    &.norm {
+        transform: none;
+        text-indent: 0;
+        color: #000;
+    }
+}
+
+.helper {
+    color: indianred;
+    visibility: hidden;
+}
+
+.input-focus {
+    position: absolute;
+    height: 2px;
+    width: 0px;
+    top: 57px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(57,226,245,1);
+    transition: all 500ms ease;
+    &.focused {
+        width: 98%;
+        transition: all 500ms ease;
+    }
+}
+
+//===================================================================================================================================
+//CHECKBOXES
+
+.styled-checkbox {
+    position: absolute;
+    opacity: 0;
+    
+    &+label {
+        position: relative;
+        cursor: pointer;
+        padding: 0;
+    }
+    
+    &+label:before {
+        content: '';
+        margin-right: 10px;
+        display: inline-block;
+        vertical-align: text-top;
+        width: 20px;
+        height: 20px;
+        background: transparent;
+        border: 2px solid lightgray;
+    }
+    
+    &:hover+label:before {
+        background: transparent;
+    }
+    
+    &:focus+label:before {
+        background: transparent;
+    }
+    
+    &:checked+label:before {
+        background: transparent;
+    }
+    
+    &:checked+label:after {
+        font-family: 'Glyphicons Halflings';
+        color: #fff;
+        padding-right: 2px;
+        content: '';//\e013
+        position: absolute;
+        left: 0;
+        top: 2px;
+        background: rgba(0,150,255,0.8);
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.blip, .r-blip {
+    height: 10px;
+    width: 10px;
+    z-index: 100;
+    position: absolute;
+    border-radius: 50%;
+    top: 7px;
+    left: 5px;
+    background: rgba(0,150,255,0.5);
+    transform: scale(0);
+    &.blipped {
+        animation: blipp 500ms ease;
+    }
+}
+
+
+@keyframes blipp {
+    to {transform: scale(5); opacity: .3;}
+}
+
+
+//===================================================================================================================================
+//RADIOS
+
+.styled-radio {
+    position: absolute;
+    opacity: 0;
+    
+    &+label {
+        position: relative;
+        cursor: pointer;
+        padding: 0;
+    }
+    
+    &+label:before {
+        content: '';
+        margin-right: 10px;
+        display: inline-block;
+        vertical-align: text-top;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: transparent;
+        border: 2px solid lightgray;
+    }
+    
+    &:hover+label:before {
+        background: transparent;
+    }
+    
+    &:focus+label:before {
+        background: transparent;
+    }
+    
+    &:checked+label:before {
+        background: transparent;
+    }
+    
+    &:checked+label:after {
+        content: '';
+        position: absolute;
+        left: 5px;
+        top: 7px;
+        background: rgba(0,150,255,0.8);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+    }
+}
+
+
+//===================================================================================================================================
+//PROGRESS BAR
+@keyframes p-animate {
+    0% {width: 70%; left: -100%;}
+    100% {width: 70%; left: 100%;}
+}
+
+.p-bar {
+    position: relative;
+    overflow: hidden;
+    margin: 10px auto;
+    padding: 0;
+    height: 5px;
+    width: 100%;
+    background: rgba(0,150,255,.2);
+}
+
+.p-bar-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50px;
+    background: rgba(0,150,255,0.8);
+    transition: all 100ms ease;
+    animation: p-animate 1500ms infinite ease-in-out;
+}
+
+//===================================================================================================================================
+//TABLES WITH HOVER EFFECT TO ADD LEFT BORDER AND CHANGE CONTENT COLOR
+.table {
+    &.no-bs {
+        border-width: 2px;
+        border-radius: 3px;
+        tr {
+            &:hover {
+                background: #f5f5f5;
+                border-left: 2px solid rgba(0,150,255,0.8);
+                color: rgba(0,150,255,0.8);
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.table {
+    border-width: 2px;
+    tr {
+        &:hover {
+            background: #f5f5f5;
+            border-left: 2px solid rgba(0,150,255,0.8);
+            color: rgba(0,150,255,0.8);
+            // font-weight: 700;
+        }
+    }
+}
+
+
+//===================================================================================================================================
+//TABLES WITH HOVER EFFECT TO ADD LEFT BORDER AND CHANGE CONTENT COLOR
+.nav-tabs {
+    border: none;
+    li {
+        .active {
+            a {
+                border: none;
+            }
+        }
+    }
+}
+
+
+.tab-follower {
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,150,255,0.8);
+    transition: all 300ms ease;
+}
+
+
+
+//===================================================================================================================================
+//CUSTOM-DATEPICKER STYLE THAT WILL BE USED IN CONJUNCTION WITH THEME STYLES
+
+// .qs-datepicker {
+//   color: black;
+//   position: absolute;
+//   width: 250px;
+//   display: flex;
+//   flex-direction: column;
+//   font-family: sans-serif;
+//   font-size: 14px;
+//   z-index: 9001;
+//   user-select: none;
+//   border: 1px solid gray;
+//   border-radius: 4.22275px;
+//   overflow: hidden;
+//   background: white;
+//   box-shadow: 0 20px 20px -15px rgba(0, 0, 0, 0.3);
+//   * {
+//     box-sizing: border-box;
+//   }
+//   &.qs-hidden {
+//     display: none;
+//   }
+//   .qs-overlay {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     background: rgba(0, 0, 0, 0.75);
+//     color: white;
+//     width: 100%;
+//     height: 100%;
+//     padding: .5em;
+//     z-index: 1;
+//     opacity: 1;
+//     transition: opacity 0.3s;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     &.qs-hidden {
+//       opacity: 0;
+//       z-index: -1;
+//     }
+//     .qs-close {
+//       align-self: flex-end;
+//       display: inline-table;
+//       padding: .5em;
+//       line-height: .77;
+//       cursor: pointer;
+//       position: absolute;
+//     }
+//     .qs-overlay-year {
+//       display: block;
+//       border: none;
+//       background: transparent;
+//       border-bottom: 1px solid white;
+//       border-radius: 0;
+//       color: white;
+//       font-size: 14px;
+//       padding: .25em 0;
+//       margin: auto 0 .5em;
+//       width: calc(100% - 1em);
+//       &::-webkit-inner-spin-button {
+//         -webkit-appearance: none;
+//       }
+//     }
+//     .qs-submit {
+//       border: 1px solid white;
+//       border-radius: 4.22275px;
+//       padding: .5em;
+//       margin: 0 auto auto;
+//       cursor: pointer;
+//       background: rgba(128, 128, 128, 0.4);
+//       &.qs-disabled {
+//         color: gray;
+//         border-color: gray;
+//         cursor: not-allowed;
+//       }
+//     }
+//   }
+//   .qs-controls {
+//     width: 100%;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     flex-grow: 1;
+//     flex-shrink: 0;
+//     background: lightgray;
+//     filter: blur(0px);
+//     transition: filter 0.3s;
+//     &.qs-blur {
+//       filter: blur(5px);
+//     }
+//   }
+//   .qs-arrow {
+//     height: 25px;
+//     width: 25px;
+//     position: relative;
+//     cursor: pointer;
+//     border-radius: 5px;
+//     transition: background .15s;
+//     &:hover {
+//       background: rgba(0, 0, 0, 0.1);
+//       &.qs-left:after {
+//         border-right-color: black;
+//       }
+//       &.qs-right:after {
+//         border-left-color: black;
+//       }
+//     }
+//     &:after {
+//       content: '';
+//       border: 6.25px solid transparent;
+//       position: absolute;
+//       top: 50%;
+//       transition: border .2s;
+//     }
+//     &.qs-left:after {
+//       border-right-color: gray;
+//       right: 50%;
+//       transform: translate(25%, -50%);
+//     }
+//     &.qs-right:after {
+//       border-left-color: gray;
+//       left: 50%;
+//       transform: translate(-25%, -50%);
+//     }
+//   }
+//   .qs-month-year {
+//     font-weight: bold;
+//     transition: border .2s;
+//     border-bottom: 1px solid transparent;
+//     cursor: pointer;
+//     &:hover {
+//       border-bottom: 1px solid gray;
+//     }
+//     &:focus, &:active:focus {
+//       outline: none;
+//     }
+//   }
+//   .qs-month {
+//     padding-right: .5ex;
+//   }
+//   .qs-year {
+//     padding-left: .5ex;
+//   }
+//   .qs-squares {
+//     display: flex;
+//     flex-wrap: wrap;
+//     padding: 5px;
+//     filter: blur(0px);
+//     transition: filter 0.3s;
+//     &.qs-blur {
+//       filter: blur(5px);
+//     }
+//   }
+//   .qs-square {
+//     width: 14.28571429%;
+//     height: 25px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     cursor: pointer;
+//     transition: background .1s;
+//     border-radius: 4.22275px;
+//     &.qs-current {
+//       font-weight: bold;
+//     }
+//     &.qs-active {
+//       background: lightblue;
+//     }
+//     &.qs-disabled span {
+//       opacity: .2;
+//     }
+//     &.qs-empty {
+//       cursor: default;
+//     }
+//     &.qs-disabled {
+//       cursor: not-allowed;
+//     }
+//     &.qs-day {
+//       cursor: default;
+//       font-weight: bold;
+//       color: gray;
+//     }
+//     &:not(.qs-empty):not(.qs-disabled):not(.qs-day):hover {
+//       background: orange;
+//     }
+//   }
+// }
+
+
+//===================================================================================================================================
+//VALIDATION STYLING(ADDED TO PARENT ELEMENT)
+.form-group {
+    &.norm {
+        label {
+            transform: none;
+            color: initial;
+        }
+    }
+    &.invalid {
+        .helper {
+            visibility: visible;
+        }
+        .input-focus {
+            background: indianred;
+            width: 98%;
+        }
+        label {
+            transform: none;
+            color: indianred;
+        }
+    }
+}
